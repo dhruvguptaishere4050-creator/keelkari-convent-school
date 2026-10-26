@@ -1,0 +1,12 @@
+{
+  "name": "keelkari-convent-school",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Keelkari Convent School public website and administration portal.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

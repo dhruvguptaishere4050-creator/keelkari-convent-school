@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: keelkari-convent-school
+    runtime: node
+    # Paid compute stays awake; Render Free sleeps after 15 idle minutes.
+    plan: 0.5c-512mb
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/notices
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: KCS_ADMIN_USERNAME
+        value: admin
+      - key: KCS_ADMIN_PASSWORD
+        sync: false
+    disk:
+      name: school-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
